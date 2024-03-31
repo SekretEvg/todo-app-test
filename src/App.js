@@ -1,24 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import TodoWrapper1 from './components/todo1/TodoWrapper1';
+import TodoWrapper2 from './components/todo2/TodoWrapper2';
+import TodoWrapper3 from './components/todo3/TodoWrapper3';
+import Counter from './components/counter/Counter';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/todo1' element={<TodoWrapper1 />} />
+      <Route path='/todo2' element={<TodoWrapper2 />} />
+      <Route path='/' element={<TodoWrapper3 />} />
+      <Route path='/counter' element={<Counter />} />
+    </Routes>
   );
 }
 
